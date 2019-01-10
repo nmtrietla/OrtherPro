@@ -30,6 +30,7 @@ namespace AppCallOrtherProgram.Views
 
         async void Save_Clicked(object sender, EventArgs e)
         {
+           await DisplayAlert("Alert", DependencyService.Get<GetLink>().OpenExternalGetLink(), "OK");
             MessagingCenter.Send(this, "AddItem", Item);
             await Navigation.PopModalAsync();
         }
